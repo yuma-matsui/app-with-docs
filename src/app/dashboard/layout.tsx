@@ -10,7 +10,6 @@ export default function DashboardLayout({
       <h2 className="text-xl">
         Dashboard Layout
       </h2>
-      <Counter />
       {children}
     </section>
   )
