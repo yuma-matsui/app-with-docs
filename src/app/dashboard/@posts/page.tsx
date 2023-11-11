@@ -7,11 +7,11 @@ type Post = {
 
 export default async function Posts() {
   await sleep(3000)
-  const posts: Post[] = await (await fetch('https://jsonplaceholder.typicode.com/posts')).json()
+  const data: { posts: Post[] } = await (await fetch('http://localhost:3000/api/posts')).json()
 
   return (
     <ul>
-      {posts.map(({ id, title }) => <li key={id}>{title}</li>)}
+      {data.posts.map(({ id, title }) => <li key={id}>{title}</li>)}
     </ul>
   )
 }
